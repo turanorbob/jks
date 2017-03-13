@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="20161205162200000_create_table_user" author="Liao Jian">
+        <sqlFile path="classpath:config/liquibase/data/20161205/20161205162200000_create_table_user.sql" relativeToChangelogFile="false"/>
+    </changeSet>
+</databaseChangeLog>

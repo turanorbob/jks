@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+
+db:
+  url: jdbc:hsqldb:file:testdb
+  username: sa
+  password:
+server:
+  port: 9999
