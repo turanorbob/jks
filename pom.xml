@@ -51,16 +51,32 @@
                     <rules>
                         <requireMavenVersion>
                             <message>You are running an older version of Maven. JHipster requires at
-                                least Maven 3.0</message>
+                                least Maven 3.0
+                            </message>
                             <version>[3.0.0,)</version>
                         </requireMavenVersion>
                         <requireJavaVersion>
                             <message>You are running an older version of Java. JHipster requires at
                                 least JDK
-                                ${java.version}</message>
+                                ${java.version}
+                            </message>
                             <version>[${java.version}.0,)</version>
                         </requireJavaVersion>
                     </rules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.21</version>
+                <configuration>
+                    <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <contextPath>/</contextPath>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8088</port>
+                        </connector>
+                    </connectors>
                 </configuration>
             </plugin>
         </plugins>
@@ -103,9 +119,9 @@
             <version>${spring.boot.version}</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-websocket</artifactId>-->
-            <!--<version>${spring.boot.version}</version>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-websocket</artifactId>-->
+        <!--<version>${spring.boot.version}</version>-->
         <!--</dependency>-->
 
         <dependency>
@@ -223,9 +239,9 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>commons-dbcp</groupId>-->
-            <!--<artifactId>commons-dbcp</artifactId>-->
-            <!--<version>1.4</version>-->
+        <!--<groupId>commons-dbcp</groupId>-->
+        <!--<artifactId>commons-dbcp</artifactId>-->
+        <!--<version>1.4</version>-->
         <!--</dependency>-->
 
         <dependency>
