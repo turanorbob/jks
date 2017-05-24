@@ -3,7 +3,6 @@ package org.jks.utils;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
-import com.mydreamplus.modules.http.HttpClientBuilder;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.Consts;
 import org.apache.http.client.fluent.Executor;
@@ -43,7 +42,7 @@ public class MailUtil {
             Request request = Request.Post(url)
 //                    .setHeader("Content-Type", "application/json")
                     .bodyForm(new BasicNameValuePair("name", username), new BasicNameValuePair("password", password));
-            Executor executor = Executor.newInstance(HttpClientBuilder.insecureHttpClient());
+            Executor executor = Executor.newInstance(/*HttpClientBuilder.insecureHttpClient()*/);
 
             try {
                 String json = executor.execute(request).returnContent().asString(Consts.UTF_8);
@@ -78,7 +77,7 @@ public class MailUtil {
             Request request = Request.Post(url)
                     .addHeader("authorization", "bearer " + token)
                     .bodyForm(bodyFrom, Charset.forName("UTF-8"));
-            Executor executor = Executor.newInstance(HttpClientBuilder.insecureHttpClient());
+            Executor executor = Executor.newInstance(/*HttpClientBuilder.insecureHttpClient()*/);
 
             String json = executor.execute(request).returnContent().asString(Consts.UTF_8);
             LOG.info(json);
